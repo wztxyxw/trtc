@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle" >
+    <!--<corners android:radius="3dp"/>-->
+    <solid android:color="@color/white"/>
+    <stroke
+        android:width="@dimen/divide_line_height"
+        android:color="@color/activity_bg_color"/>
+    <!--<corners
+        android:radius="@dimen/edittext_corner_radius"/>-->
+    <!-- android:dashWidth="1dp"  边上是点点，点宽度 1dp
+        android:dashGap="2dp"
+    -->
+</shape>

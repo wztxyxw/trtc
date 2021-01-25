@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#fff</color>
+    <color name="popup_devider_color">#ebebeb</color>
+    <color name="line_color">#e6e6e6</color>
+    <color name="item_click_bg_color">#dddddd</color>
+    <color name="text_color_property">#333</color>
+    <color name="text_color_light_blue">#2BBFD6</color>
+    <color name="text_color_light_blue_pre">#13b0c2</color>
+
+    <!-- 全局使用的颜色 -->
+    <color name="titlebar_bg_color">#3C3C3C</color>
+    <color name="actionbar_bg_color">#11d3c1</color>
+    <color name="long_btn_bg_press">#11b9aa</color>
+    <color name="app_def_color">#11d3c1</color>
+    <color name="activity_bg_color">#ebebeb</color>
+    <color name="setting_line_color">#D0D0CF</color>
+    <color name="light_grey3">#cccccc</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="popup_nick_name_hint_color">#b2b2b2</color>
+    <color name="button_press_red">#d02c30</color>
+    <color name="important_operation_color">#F83A3A</color>
+    <color name="confirm_cancel_color">#f05555</color>
+    <color name="cancel_color">#FF6E42</color>
+
+    <!--wheelview使用颜色-->
+
+    <color name="transparent20">#B8000000</color>
+    <color name="transparent50">#80000000</color>
+    <color name="transparent80">#20000000</color>
+    <color name="white80">#20ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent1">#48333333</color>
+
+    <color name="theme">#50A0FF</color>
+    <color name="theme_bg">#F5F6FA</color>
+    <color name="header_bg">#fff3f4f5</color>
+    <color name="bg_color">#fff3f4f5</color>
+
+    <color name="c0">#00000000</color>
+    <color name="c1">#ffffff</color>
+    <color name="c2">#eeeeee</color>
+    <color name="c3">#dedede</color>
+    <color name="c4">#cecece</color>
+    <color name="c5">#9b9b9b</color>
+    <color name="c6">#646464</color>
+    <color name="c7">#383838</color>
+    <color name="c8">#ff6c6c</color>
+    <color name="c9">#cc3333</color>
+    <color name="c10">#e79e99</color>
+    <color name="c11">#ffe8e7</color>
+    <color name="c12">#ffffff</color>
+    <color name="c13">#000000</color>
+    <color name="c14">#960000</color>
+    <color name="c15">#f8f8f8</color>
+    <color name="c16">#c4c4c4</color>
+    <color name="c17">#252525</color>
+    <color name="c18">#e8e8e8</color>
+    <color name="c19">#fff36457</color>
+    <color name="c19t">#f0cc3333</color>
+    <color name="c20">#1f1f1f</color>
+    <color name="c21">#f28f25</color>
+    <color name="c22">#86BA63</color>
+    <color name="c23">#052543</color>
+    <color name="c24">#DFFBD8</color>
+    <color name="c25">#A2F586</color>
+    <color name="c26">#6C998B</color>
+    <color name="c27">#29504A</color>
+    <color name="c28">#F2BDA2</color>
+    <color name="c29">#B6F8FB</color>
+    <color name="c30">#3175AD</color>
+    <color name="c31">#049AF9</color>
+    <color name="c32">#09B9FA</color>
+    <color name="c33">#FDE412</color>
+    <color name="c34">#D05D16</color>
+    <color name="c35">#ff238f47</color>
+    <color name="c36">#F9C616</color>
+    <color name="c37">#22CEDB</color>
+    <color name="c38">#02FEFB</color>
+    <color name="c39">#FCA100</color>
+    <color name="c40">#80FCA100</color>
+    <color name="c41">#EF6724</color>
+    <color name="c42">#38CAA2</color>
+    <color name="c43">#aaf3f4f5</color>
+    <color name="c44">#FF8C54</color>
+    <color name="c45">#FCA100</color>
+    <color name="c46">#FFF3ED</color>
+    <color name="c47">#F9C2A7</color>
+    <color name="c48">#EAFDE9</color>
+    <color name="c49">#EF6724</color>
+    <color name="c50">#6DD400</color>
+    <color name="c51">#1C1C1C</color>
+    <color name="c52">#50A0FF</color>
+    <color name="c53">#8050A0FF</color>
+    <color name="c54">#F77293</color>
+    <color name="c55">#B4DBFC</color>
+    <color name="c56">#4DC0D8</color>
+    <color name="c57">#FFB400</color>
+    <color name="c58">#FAC8BF</color>
+    <color name="c59">#B4DBFC</color>
+    <color name="c60">#00DCFB</color>
+    <color name="c61">#5D8EAF</color>
+    <color name="c62">#FCEFE0</color>
+    <color name="c63">#FF927E</color>
+    <color name="c64">#FFD239</color>
+    <color name="c65">#FFB800</color>
+    <color name="c66">#60C4C7</color>
+    <color name="c67">#B4DBFC</color>
+    <color name="c68">#F5F5F5</color>
+    <color name="c69">#E9F5FF</color>
+    <color name="c70">#f74c31</color>
+    <color name="c71">#F77C7B</color>
+    <color name="c72">#79C1FF</color>
+    <color name="c73">#72BEFB</color>
+
+
+    <color name="color1">#FFFFFF</color>
+    <color name="color2">#666666</color>
+    <color name="color3">#D0D0D0</color>
+    <color name="color4">#F6F6F6</color>
+    <color name="color13">#F9974E</color>
+    <color name="color14">#59B29C</color>
+    <color name="color25">#ED5564</color>
+    <color name="color26">#D7D8DC</color>
+    <color name="color27">#60646464</color>
+    <color name="color28">#40646464</color>
+    <color name="color29">#C0646464</color>
+    <color name="color30">#B1FFFFFF</color>
+
+
+
+    <!--登录-->
+    <color name="login_btn_bg_color">@color/button_press_red</color>
+    <color name="login_btn_bg_press">#FF6738</color>
+    <color name="login_btn_bg_false">#f15a35</color>
+    <color name="login_btn_text_color">#f1abb0</color>
+
+
+    <color name="rdb_bg">#151515</color>
+    <color name="yellow">#fdd108</color>
+
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+
+    <color name="qmui_config_color_blue">#1B88EE</color>
+    <color name="qmui_config_color_50_blue">#801B88EE</color>
+    <color name="qmui_config_color_separator">#DEE0E2</color>
+
+    <color name="qmui_config_color_gray_3">#5D646E</color>
+    <color name="qmui_config_color_gray_1">#353C46</color>
+
+</resources>

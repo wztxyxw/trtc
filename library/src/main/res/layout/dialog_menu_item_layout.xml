@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dialog_item_height"
+    android:minHeight="@dimen/dialog_item_height"
+    android:orientation="vertical"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/dialog_menu_list_txt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="@dimen/dialog_item_height"
+        style="@style/dialog_custom_title_text_style"
+        android:gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DIMEN_1PX"
+        android:background="@color/c2"/>
+</LinearLayout>

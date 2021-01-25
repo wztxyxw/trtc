@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+    <style name="dialog_custom_title_text_style">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:textSize">17dp</item>
+        <item name="android:textColor">@color/text_color_property</item>
+    </style>
+
+    <style name="dialog_custom_content_text_style">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:textSize">17dp</item>
+        <item name="android:textColor">@color/text_color_property</item>
+    </style>
+
+    <style name="horizontal_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/c3</item>
+    </style>
+
+    <!--登录注册密码找回按钮样式-->
+    <style name="login_button_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/login_button_height</item>
+        <item name="android:layout_marginLeft">@dimen/login_button_side_left</item>
+        <item name="android:layout_marginRight">@dimen/login_button_side_right</item>
+        <item name="android:layout_marginTop">@dimen/login_button_side_top</item>
+        <item name="android:textSize">@dimen/text_size_xl</item>
+    </style>
+
+    <style name="titlebar_title_txt_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:maxWidth">300dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/c3</item>
+        <item name="android:textSize">@dimen/text_size_l</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="titlebar_action_txt_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:textColor">@color/c3</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- LoadingDialog -->
+    <style name="LoadingDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/transparent80</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="DialogFullScreen" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="divide_line_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divide_line_height</item>
+        <item name="android:background">@drawable/divide_line_color</item>
+    </style>
+
+    <style name="editText_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_margin">@dimen/DIMEN_10PX</item>
+        <item name="android:background">@drawable/inputtext_bg</item>
+        <item name="android:inputType">text</item>
+        <item name="android:textSize">@dimen/DIMEN_20PX</item>
+        <item name="android:textColor">@color/c6</item>
+    </style>
+</resources>

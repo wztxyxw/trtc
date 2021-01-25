@@ -1,0 +1,199 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'com.alibaba.arouter'
+//apply plugin: 'com.antfortune.freeline'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    def outDir = file("build")
+    String projectName = ""
+    Properties props = new Properties()
+    flavorDimensions("project")
+
+
+    productFlavors {
+        PAD { // 货主
+            dimension "project"
+            projectName = "SUYANG_PAD"
+            props.load(new InputStreamReader(new FileInputStream(file("../platform/pad.properties")), "UTF-8"))
+//            apply from: '../platform/${projectName}/MobSDK.gradle'
+            applicationId = props['APPLICATION_ID']
+            versionCode = Integer.valueOf(props['VERSION_CODE'])
+            versionName = props['VERSION_NAME']
+
+            buildConfigField "String", "bugly_key", props['bugly_key']
+            buildConfigField "String", "umeng_key", props['umeng_key']
+            buildConfigField "String", "umeng_login_key", props['umeng_login_key']
+            buildConfigField "String", "wechat_app_id", props['wechat']
+            buildConfigField "String", "mob_app_key", props['mob_app_key']
+            buildConfigField "String", "mob_app_secret", props['mob_app_secret']
+            buildConfigField "int", "im_id", props['im_id']
+            buildConfigField "int", "app_type", props['app_type']
+            manifestPlaceholders = [amap_id: props['amap_id'], jpush_key: props['jpush_key'], projectName: props['BUILD_NAME']]
+        }
+    }
+    signingConfigs {
+        common {
+            storeFile file(props['RELEASE_STORE_FILE'])
+            storePassword props['RELEASE_STORE_PASSWORD']
+            keyAlias props['RELEASE_KEY_ALIAS']
+            keyPassword props['RELEASE_KEY_PASSWORD']
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+//        applicationId "com.vo.xuandou"
+//        versionCode appVerCode
+//        versionName appVerName + "-${releaseTime()}"
+
+//        props.load(new FileInputStream(file("cd.properties")))
+//        applicationId = props['APPLICATION_ID']
+//        versionCode = Integer.valueOf(props['VERSION_CODE'])
+//        versionName = props['VERSION_NAME']
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+        ndk {
+            abiFilters 'armeabi', 'armeabi-v7a'//, 'x86'
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.common
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'proguard.cfg'
+        }
+
+        retest {
+            signingConfig signingConfigs.common
+            minifyEnabled false
+//            minifyEnabled true
+//            shrinkResources true
+//            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'proguard.cfg'
+        }
+
+        debug {
+            signingConfig signingConfigs.common
+            minifyEnabled false
+//            minifyEnabled true
+//            shrinkResources true
+//            zipAlignEnabled true
+            versionNameSuffix "-debug"
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs', 'libs/decode', 'libs/amap', 'libs/baidu']
+            res.srcDirs =
+                    [
+                            'src/main/res/layouts/activity',
+                            'src/main/res/layouts/fragment',
+                            'src/main/res/layouts/dialog',
+                            'src/main/res/layouts/item',
+                            'src/main/res/layouts/view',
+                            'src/main/res/layouts/include',
+                            'src/main/res/layouts',
+                            'src/main/res'
+                    ]
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            it.outputs.each {
+                def fileName = it.outputFileName
+                fileName = fileName.replaceAll("app-", "")
+                        .replaceAll(".apk", "_v${versionName}_${releaseTime()}_${variant.buildType.name}.apk")
+                        .replaceAll("-${variant.buildType.name}", "")
+                it.outputFileName = fileName
+            }
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar', 'amap/*.jar', 'baidu/*.jar', 'msc/*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+    //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+
+//    api(name: 'alipaySdk-15.7.5-20200422171619', ext: 'aar')
+//    api(name: 'umeng-uverify-1.3.0', ext: 'aar')
+
+    api project(':library')
+//    api project(':network')
+//    api project(':jpush')
+    api project(':easyPhotos')
+
+//    api project(':ndkbitmap-armv5')
+//    api project(':ndkbitmap-armv7a')
+//    api project(':ndkbitmap-x86')
+//    api project(':DanmakuFlameMaster')
+//
+//
+//    api project(':mojito')
+//    api project(':FrescoImageLoader')
+//    api project(':SketchImageViewLoader')
+//
+//    api project(':camera')
+
+//    api project(':dkplayer-java')
+//    api project(':dkplayer-ui')
+//    api project(path: ':dkplayer-players:ijk')
+//    //缓存
+//    api project(':dkplayer-videocache')
+
+    api deps.butterknife
+    annotationProcessor deps.butterknifecompiler
+    api deps.arouterapi
+    annotationProcessor deps.aroutercompiler
+    api deps.dagger
+    annotationProcessor deps.daggerapt
+
+    //implementation 'com.tencent.imsdk:tuikit:4.7.10'
+
+    api project(':tuikit')
+    api project(':network')
+
+    api deps.frescogif
+    api deps.animatedwebp
+}
+
+def releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+8"))
+}

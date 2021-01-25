@@ -1,0 +1,118 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'maven'
+android {
+    //noinspection GroovyAssignabilityCheck
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME : project.getName() ]
+            }
+        }
+    }
+
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+//    defaultConfig {
+//        ndk {
+//            abiFilters 'armeabi', 'armeabi-v7a', 'x86'
+//        }
+//    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        retest {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+//    android.applicationVariants.all { variant ->
+//        variant.outputs.all {
+//            it.outputs.each {
+//                def fileName = it.outputFileName
+//                fileName = fileName.replaceAll("library", "sclibrary").replaceAll(".aar", "-${versionName}.aar")
+//                it.outputFileName = fileName
+//            }
+//        }
+//    }
+}
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation deps.junit
+    api deps.appcompatV7
+    api deps.appcompatV4
+    api deps.retrofit
+    api deps.convertergson
+    api deps.adapterrxjava
+    api deps.glide
+    api deps.rxjava
+    api deps.rxandroid
+    api deps.logginginterceptor
+    api deps.fresco
+    api deps.frescogif
+    api deps.animatedwebp
+    //api deps.webpsupport
+    api deps.leakcanary
+    api deps.multidex
+    api deps.butterknife
+    annotationProcessor deps.butterknifecompiler
+//    compile deps.flycotab
+    api deps.baserecyclerview
+    api deps.cardviewV7
+    api deps.design
+    api deps.frescookhttp
+    api deps.banner
+    api deps.marqueeview
+//    compile deps.okhttp3
+    api deps.constraint
+    //api deps.umsdkanalytics
+    api deps.umsdkcommon
+    api deps.umsdkasms
+    api deps.umsdkcrash
+    api deps.umsdklenovo
+    api deps.umsdkmi
+    api deps.umsdkoppo
+    api deps.umsdkvivo
+
+//    api deps.swipebacklayout
+    api deps.systembartint
+    api deps.eventbus
+    api deps.nmupdate
+    api deps.litepal
+    api deps.zxing
+    api deps.clans
+    api group: 'commons-codec', name: 'commons-codec', version: '1.3'
+
+    api deps.arouterapi
+    annotationProcessor deps.aroutercompiler
+    api deps.fastson
+    api deps.dagger
+    api deps.oss
+    api deps.lottie
+//    api deps.mojito
+//    api deps.mojitoFresco
+//    api deps.mojitoSketch
+//    api deps.mojitoGlide
+    //api deps.pickerview
+    annotationProcessor deps.daggerapt
+}

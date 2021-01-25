@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent20"
+    android:gravity="center">
+    <FrameLayout
+        android:id="@+id/main_layout"
+        android:layout_width="@dimen/DIMEN_445PX"
+        android:layout_height="@dimen/DIMEN_590PX"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/DIMEN_20PX"
+            android:orientation="vertical"
+            android:background="@mipmap/ic_update_bg"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/DIMEN_20PX"
+                android:layout_marginRight="@dimen/DIMEN_20PX"
+                android:layout_marginBottom="@dimen/DIMEN_20PX"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/DIMEN_150PX"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/c52"
+                        android:textSize="@dimen/DIMEN_24PX"
+                        android:textStyle="bold"
+                        android:text="新版本全新上线"/>
+
+                    <TextView
+                        android:id="@+id/message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/DIMEN_10PX"
+                        android:textColor="@color/c5"
+                        android:lineSpacingExtra="@dimen/DIMEN_5PX"
+                        android:textSize="@dimen/DIMEN_22PX"
+                        tools:text="1个月"/>
+
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DIMEN_1PX"
+                android:background="@color/c2"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DIMEN_60PX"
+                android:layout_marginBottom="@dimen/DIMEN_5PX"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/dialog_custom_yes"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="立即更新"
+                    android:textSize="@dimen/DIMEN_24PX"
+                    android:textColor="@color/confirm_text_color"/>
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/DIMEN_40PX"
+            android:layout_marginRight="@dimen/DIMEN_20PX"
+            android:src="@mipmap/ic_board_rule_close"/>
+    </FrameLayout>
+    <LinearLayout
+        android:id="@+id/progress_layout"
+        android:layout_width="@dimen/DIMEN_445PX"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_radius_bg"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/progress_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/DIMEN_10PX"
+                android:textColor="@color/c52"
+                android:text="下载中"
+                android:textSize="@dimen/DIMEN_25PX" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/DIMEN_20PX"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/progress_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前已下载"
+                    android:textColor="@color/c52"
+                    android:textSize="@dimen/DIMEN_20PX" />
+
+                <TextView
+                    android:id="@+id/progress_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/c52"
+                    tools:text="66%"
+                    android:textSize="@dimen/DIMEN_20PX"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10px"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="@dimen/DIMEN_50PX"
+                android:progressDrawable="@drawable/progressbar"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

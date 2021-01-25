@@ -1,0 +1,2 @@
+include ':app', ':dkplayer-players:ijk', ':wheelview', ':dkplayer-java', ':pickerview', ':tuikit', ':easyPhotos', ':library', ':network'
+rootProject.name='PadDemo'

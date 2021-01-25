@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ClearEditText">
+        <!-- 清除按钮的图标 -->
+        <attr name="iconClear" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="RotateLoading">
+        <attr name="loading_top_color" format="color" />
+        <attr name="loading_bottom_color" format="color" />
+        <attr name="loading_width" format="dimension" />
+        <attr name="shadow_position" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="runtextview">
+        <!-- 输入框文字颜色-->
+        <attr name="titleColor" format="color"/>
+        <!-- 输入框文字大小-->
+        <attr name="runTextSize" format="dimension"/>
+        <!-- 输入框文字颜色-->
+        <attr name="contentColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="gridview">
+        <!-- 加分割线-->
+        <attr name="showline" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="numberPicker">
+        <!-- 加背景-->
+        <attr name="addImg" format="reference|color"/>
+        <!-- 减背景-->
+        <attr name="subtractImg" format="reference|color"/>
+        <!-- 输入框背景-->
+        <attr name="textBackground" format="reference|color"/>
+        <!-- 加减按键大小背景-->
+        <attr name="buttonWH" format="dimension"/>
+        <!-- 设置最小值-->
+        <attr name="minnum" format="integer"/>
+        <!-- 输入框文字颜色-->
+        <attr name="txColor" format="color"/>
+        <!-- 输入框文字大小-->
+        <attr name="txSize" format="dimension"/>
+    </declare-styleable>
+
+    <!--自定义输入框的属性-->
+    <declare-styleable name="IconEditText">
+        <!--左边的图片-->
+        <attr name="leftImageSrc" format="reference"/>
+        <!--右边的图片-->
+        <attr name="rightImageSrc" format="reference"/>
+        <!--hint-->
+        <attr name="hint" format="string"/>
+        <!--hintColor-->
+        <attr name="hintColor" format="reference"/>
+        <!--int TYPE_CLASS_DATETIME = 4;
+            int TYPE_CLASS_NUMBER = 2;
+            int TYPE_CLASS_PHONE = 3;
+            int TYPE_CLASS_TEXT = 1;-->
+        <!--输入文本的种类-->
+        <!--<attr name="inputType">
+            <enum name="TYPE_CLASS_DATETIME" value="4"/>
+            <enum name="TYPE_CLASS_NUMBER" value="2"/>
+            <enum name="TYPE_CLASS_PHONE" value="3"/>
+            <enum name="TYPE_CLASS_TEXT" value="1"/>
+            <enum name="TYPE_TEXT_VARIATION_PASSWORD" value="128"/>
+        </attr>-->
+
+        <attr name="inputType">
+            <!-- There is no content type.  The text is not editable. -->
+            <enum name="none" value="0x00000000" />
+            <!-- Just plain old text.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_TEXT} |
+                 {@link android.text.InputType#TYPE_TEXT_VARIATION_NORMAL}. -->
+            <enum name="text" value="0x00000001" />
+            <!-- Can be combined with <var>text</var> and its variations to
+                 request capitalization of all characters.  Corresponds to
+                 {@link android.text.InputType#TYPE_TEXT_enum_CAP_CHARACTERS}. -->
+            <enum name="textCapCharacters" value="0x00001001" />
+            <!-- Can be combined with <var>text</var> and its variations to
+                 request capitalization of the first character of every word.  Corresponds to
+                 {@link android.text.InputType#TYPE_TEXT_enum_CAP_WORDS}. -->
+            <enum name="textCapWords" value="0x00002001" />
+            <!-- Can be combined with <var>text</var> and its variations to
+                 request capitalization of the first character of every sentence.  Corresponds to
+                 {@link android.text.InputType#TYPE_TEXT_enum_CAP_SENTENCES}. -->
+            <enum name="textCapSentences" value="0x00004001" />
+            <!-- Can be combined with <var>text</var> and its variations to
+                 request auto-correction of text being input.  Corresponds to
+                 {@link android.text.InputType#TYPE_TEXT_enum_AUTO_CORRECT}. -->
+            <enum name="textAutoCorrect" value="0x00008001" />
+            <!-- Can be combined with <var>text</var> and its variations to
+                 specify that this field will be doing its own auto-completion and
+                 talking with the input method appropriately.  Corresponds to
+                 {@link android.text.InputType#TYPE_TEXT_enum_AUTO_COMPLETE}. -->
+            <enum name="textAutoComplete" value="0x00010001" />
+            <!-- Can be combined with <var>text</var> and its variations to
+                 allow multiple lines of text in the field.  If this enum is not set,
+                 the text field will be constrained to a single line.  Corresponds to
+                 {@link android.text.InputType#TYPE_TEXT_enum_MULTI_LINE}. -->
+            <enum name="textMultiLine" value="0x00020001" />
+            <!-- Can be combined with <var>text</var> and its variations to
+                 indicate that though the regular text view should not be multiple
+                 lines, the IME should provide multiple lines if it can.  Corresponds to
+                 {@link android.text.InputType#TYPE_TEXT_enum_IME_MULTI_LINE}. -->
+            <enum name="textImeMultiLine" value="0x00040001" />
+            <!-- Can be combined with <var>text</var> and its variations to
+                 indicate that the IME should not show any
+                 dictionary-based word suggestions.  Corresponds to
+                 {@link android.text.InputType#TYPE_TEXT_enum_NO_SUGGESTIONS}. -->
+            <enum name="textNoSuggestions" value="0x00080001" />
+            <!-- Text that will be used as a URI.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_TEXT} |
+                 {@link android.text.InputType#TYPE_TEXT_VARIATION_URI}. -->
+            <enum name="textUri" value="0x00000011" />
+            <!-- Text that will be used as an e-mail address.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_TEXT} |
+                 {@link android.text.InputType#TYPE_TEXT_VARIATION_EMAIL_ADDRESS}. -->
+            <enum name="textEmailAddress" value="0x00000021" />
+            <!-- Text that is being supplied as the subject of an e-mail.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_TEXT} |
+                 {@link android.text.InputType#TYPE_TEXT_VARIATION_EMAIL_SUBJECT}. -->
+            <enum name="textEmailSubject" value="0x00000031" />
+            <!-- Text that is the content of a short message.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_TEXT} |
+                 {@link android.text.InputType#TYPE_TEXT_VARIATION_SHORT_MESSAGE}. -->
+            <enum name="textShortMessage" value="0x00000041" />
+            <!-- Text that is the content of a long message.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_TEXT} |
+                 {@link android.text.InputType#TYPE_TEXT_VARIATION_LONG_MESSAGE}. -->
+            <enum name="textLongMessage" value="0x00000051" />
+            <!-- Text that is the name of a person.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_TEXT} |
+                 {@link android.text.InputType#TYPE_TEXT_VARIATION_PERSON_NAME}. -->
+            <enum name="textPersonName" value="0x00000061" />
+            <!-- Text that is being supplied as a postal mailing address.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_TEXT} |
+                 {@link android.text.InputType#TYPE_TEXT_VARIATION_POSTAL_ADDRESS}. -->
+            <enum name="textPostalAddress" value="0x00000071" />
+            <!-- Text that is a password.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_TEXT} |
+                 {@link android.text.InputType#TYPE_TEXT_VARIATION_PASSWORD}. -->
+            <enum name="textPassword" value="0x00000081" />
+            <!-- Text that is a password that should be visible.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_TEXT} |
+                 {@link android.text.InputType#TYPE_TEXT_VARIATION_VISIBLE_PASSWORD}. -->
+            <enum name="textVisiblePassword" value="0x00000091" />
+            <!-- Text that is being supplied as text in a web form.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_TEXT} |
+                 {@link android.text.InputType#TYPE_TEXT_VARIATION_WEB_EDIT_TEXT}. -->
+            <enum name="textWebEditText" value="0x000000a1" />
+            <!-- Text that is filtering some other data.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_TEXT} |
+                 {@link android.text.InputType#TYPE_TEXT_VARIATION_FILTER}. -->
+            <enum name="textFilter" value="0x000000b1" />
+            <!-- Text that is for phonetic pronunciation, such as a phonetic name
+                 field in a contact entry.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_TEXT} |
+                 {@link android.text.InputType#TYPE_TEXT_VARIATION_PHONETIC}. -->
+            <enum name="textPhonetic" value="0x000000c1" />
+            <!-- Text that will be used as an e-mail address on a web form.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_TEXT} |
+                 {@link android.text.InputType#TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS}. -->
+            <enum name="textWebEmailAddress" value="0x000000d1" />
+            <!-- Text that will be used as a password on a web form.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_TEXT} |
+                 {@link android.text.InputType#TYPE_TEXT_VARIATION_WEB_PASSWORD}. -->
+            <enum name="textWebPassword" value="0x000000e1" />
+            <!-- A numeric only field.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_NUMBER} |
+                 {@link android.text.InputType#TYPE_NUMBER_VARIATION_NORMAL}. -->
+            <enum name="number" value="0x00000002" />
+            <!-- Can be combined with <var>number</var> and its other options to
+                 allow a signed number.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_NUMBER} |
+                 {@link android.text.InputType#TYPE_NUMBER_enum_SIGNED}. -->
+            <enum name="numberSigned" value="0x00001002" />
+            <!-- Can be combined with <var>number</var> and its other options to
+                 allow a decimal (fractional) number.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_NUMBER} |
+                 {@link android.text.InputType#TYPE_NUMBER_enum_DECIMAL}. -->
+            <enum name="numberDecimal" value="0x00002002" />
+            <!-- A numeric password field.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_NUMBER} |
+                 {@link android.text.InputType#TYPE_NUMBER_VARIATION_PASSWORD}. -->
+            <enum name="numberPassword" value="0x00000012" />
+            <!-- For entering a phone number.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_PHONE}. -->
+            <enum name="phone" value="0x00000003" />
+            <!-- For entering a date and time.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_DATETIME} |
+                 {@link android.text.InputType#TYPE_DATETIME_VARIATION_NORMAL}. -->
+            <enum name="datetime" value="0x00000004" />
+            <!-- For entering a date.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_DATETIME} |
+                 {@link android.text.InputType#TYPE_DATETIME_VARIATION_DATE}. -->
+            <enum name="date" value="0x00000014" />
+            <!-- For entering a time.  Corresponds to
+                 {@link android.text.InputType#TYPE_CLASS_DATETIME} |
+                 {@link android.text.InputType#TYPE_DATETIME_VARIATION_TIME}. -->
+            <enum name="time" value="0x00000024" />
+        </attr>
+        <!--左图的左边距-->
+        <attr name="leftImageMarginLeft" format="dimension"/>
+        <!--编辑区的左边距-->
+        <attr name="editTextMarginLeft" format="dimension"/>
+        <!--内容字体颜色-->
+        <attr name="textColor" format="reference"/>
+        <!--内容字体大小-->
+        <attr name="textSize" format="dimension"/>
+        <!--内容最大的长度-->
+        <attr name="maxLength" format="integer"/>
+        <!--是否显示左边的图片-->
+        <attr name="showLeft" format="boolean"/>
+        <!--是否显示右边图片-->
+        <attr name="showRight" format="boolean"/>
+        <!--是否支持emoji-->
+        <attr name="emojiallow" format="boolean"/>
+        <!--是否居中-->
+        <attr name="center" format="boolean"/>
+        <!--内容最大的长度-->
+        <attr name="minLines" format="integer"/>
+
+
+    </declare-styleable>
+
+    <attr name="titleTextSize" format="dimension"/>
+    <attr name="titleTextColorRes" format="reference"/>
+    <attr name="contentTextSize" format="dimension"/>
+    <attr name="contentTextColorRes" format="reference"/>
+
+    <declare-styleable name="SettingItemView">
+        <attr name="paddingMiddle" format="dimension"/>
+        <attr name="insidePaddingLeft" format="dimension"/>
+        <attr name="insidePaddingRight" format="dimension"/>
+        <attr name="titleTextSize"/>
+        <attr name="titleTextColorRes"/>
+        <attr name="contentTextSize"/>
+        <attr name="contentTextColorRes"/>
+        <attr name="contentHintTextColorRes"/>
+        <attr name="titleText" format="string"/>
+        <attr name="contentText" format="string"/>
+        <attr name="contentHint" format="string"/>
+        <attr name="contentLength" format="integer"/>
+        <attr name="arrowBackgroundRes" format="reference"/>
+        <attr name="showArrow" format="boolean"/>
+        <attr name="divideBackgroundRes" format="reference"/>
+        <attr name="showDivide" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="FilterView">
+        <attr name="titleTextSize"/>
+        <attr name="titleTextColorRes"/>
+        <attr name="contentTextHeight" format="dimension"/>
+        <attr name="contentTextWidth" format="dimension"/>
+        <!--宽高根据字体大小自适应-->
+        <attr name="autoSquare" format="boolean"/>
+        <attr name="gravityCentre" format="boolean"/>
+        <attr name="contentTextSize"/>
+        <attr name="contentTextColorRes"/>
+        <attr name="contentTextBackgroundRes" format="reference"/>
+        <attr name="contentTextMargin" format="dimension"/>
+        <attr name="multiSelect" format="boolean"/>
+        <attr name="notNull" format="boolean"/>
+        <attr name="maxChose" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="SwitchButton">
+        <attr name="kswThumbDrawable" format="reference"/>
+        <attr name="kswThumbColor" format="color|reference"/>
+        <attr name="kswThumbMargin" format="dimension|reference"/>
+        <attr name="kswThumbMarginTop" format="dimension|reference"/>
+        <attr name="kswThumbMarginBottom" format="dimension|reference"/>
+        <attr name="kswThumbMarginLeft" format="dimension|reference"/>
+        <attr name="kswThumbMarginRight" format="dimension|reference"/>
+        <attr name="kswThumbWidth" format="dimension|reference"/>
+        <attr name="kswThumbHeight" format="dimension|reference"/>
+        <attr name="kswThumbRadius" format="dimension|reference"/>
+        <attr name="kswBackRadius" format="dimension|reference"/>
+        <attr name="kswBackDrawable" format="reference"/>
+        <attr name="kswBackColor" format="color|reference"/>
+        <attr name="kswFadeBack" format="boolean"/>
+        <attr name="kswBackMeasureRatio" format="float"/>
+        <attr name="kswAnimationDuration" format="integer"/>
+        <attr name="kswTintColor" format="color|reference"/>
+        <attr name="kswTextOn" format="string"/>
+        <attr name="kswTextOff" format="string"/>
+        <attr name="kswTextMarginH" format="dimension"/>
+        <attr name="kswAutoAdjustTextPosition" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="MyCalendarView">
+        <attr name="CalendarBaseTextSizes" format="dimension"/>
+        <attr name="CalendarChoseBg" format="reference"/>
+        <attr name="CalendarTodayBg" format="reference"/>
+        <attr name="CalendarHaveBg" format="reference"/>
+        <!--高宽比例-->
+        <attr name="CalendarHWScale" format="float"/>
+        <attr name="CalendarTextColor" format="reference"/>
+        <attr name="CalendarTextColorFade" format="reference"/>
+
+        <attr name="CalendarPreImageRes" format="reference"/>
+        <attr name="CalendarNextImageRes" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="GestureLockViewGroup">
+        <attr name="color_no_finger_inner_circle" format="color" />
+        <attr name="color_no_finger_outer_circle" format="color" />
+        <attr name="color_finger_on" format="color" />
+        <attr name="color_finger_up" format="color" />
+        <attr name="count" format="integer" />
+        <attr name="tryTimes" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="labels_view">
+        <attr name="selectType" format="enum">
+            <enum name="NONE" value="1" />
+            <enum name="SINGLE" value="2" />
+            <enum name="SINGLE_IRREVOCABLY" value="3" />
+            <enum name="MULTI" value="4" />
+        </attr>
+        <attr name="maxSelect" format="integer"/>
+        <attr name="labelTextColor" format="reference" />
+        <attr name="labelTextSize" format="dimension" />
+        <attr name="labelTextPaddingLeft" format="dimension" />
+        <attr name="labelTextPaddingTop" format="dimension" />
+        <attr name="labelTextPaddingRight" format="dimension" />
+        <attr name="labelTextPaddingBottom" format="dimension" />
+        <attr name="lineMargin" format="dimension" />
+        <attr name="wordMargin" format="dimension" />
+        <attr name="labelBackground" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="XlHRatingBar">
+        <attr name="numStars" format="integer" /><!--总的星星数-->
+        <attr name="rating" format="float" /><!--当前已选中的星星个数-->
+        <attr name="ratingViewClass" format="string" />
+    </declare-styleable>
+
+    <!-- 自定义星星属性 -->
+    <declare-styleable name="star">
+        //星星数量
+        <attr format="integer" name="starsNum"></attr>
+        //星星宽度
+        <attr format="dimension" name="starWidth"></attr>
+        //星星高度
+        <attr format="dimension" name="starHeight"></attr>
+        //星星间距
+        <attr format="dimension" name="starDistance"></attr>
+        //星星背景
+        <attr format="reference" name="starBackground"></attr>
+        //星星变化背景
+        <attr format="reference" name="starDrawBackground"></attr>
+        //控件是否可以点击
+        <attr format="boolean" name="starClickable"></attr>
+
+    </declare-styleable>
+    <!-- indicator -->
+    <!-- 设置显示器颜色 -->
+    <attr name="tl_indicator_color" format="color"/>
+    <!-- 设置显示器高度 -->
+    <attr name="tl_indicator_height" format="dimension"/>
+    <!-- 设置显示器固定宽度 -->
+    <attr name="tl_indicator_width" format="dimension"/>
+    <!-- 设置显示器margin,当indicator_width大于0,无效 -->
+    <attr name="tl_indicator_margin_left" format="dimension"/>
+    <attr name="tl_indicator_margin_top" format="dimension"/>
+    <attr name="tl_indicator_margin_right" format="dimension"/>
+    <attr name="tl_indicator_margin_bottom" format="dimension"/>
+    <!-- 设置显示器圆角弧度-->
+    <attr name="tl_indicator_corner_radius" format="dimension"/>
+    <!-- 设置显示器上方还是下方,只对圆角矩形有用-->
+    <attr name="tl_indicator_gravity" format="enum">
+        <enum name="TOP" value="48"/>
+        <enum name="BOTTOM" value="80"/>
+    </attr>
+    <!-- 设置显示器为常规|三角形|背景色块|-->
+    <attr name="tl_indicator_style" format="enum">
+        <enum name="NORMAL" value="0"/>
+        <enum name="TRIANGLE" value="1"/>
+        <enum name="BLOCK" value="2"/>
+    </attr>
+    <!-- 设置显示器长度与title一样长,只有在STYLE_NORMAL并且indicatorWidth小于零有效-->
+    <attr name="tl_indicator_width_equal_title" format="boolean"/>
+    <!-- 设置显示器支持动画-->
+    <attr name="tl_indicator_anim_enable" format="boolean"/>
+    <!-- 设置显示器动画时间-->
+    <attr name="tl_indicator_anim_duration" format="integer"/>
+    <!-- 设置显示器支持动画回弹效果-->
+    <attr name="tl_indicator_bounce_enable" format="boolean"/>
+
+    <!-- underline -->
+    <!-- 设置下划线颜色 -->
+    <attr name="tl_underline_color" format="color"/>
+    <!-- 设置下划线高度 -->
+    <attr name="tl_underline_height" format="dimension"/>
+    <!-- 设置下划线上方还是下方-->
+    <attr name="tl_underline_gravity" format="enum">
+        <enum name="TOP" value="48"/>
+        <enum name="BOTTOM" value="80"/>
+    </attr>
+
+    <!-- divider -->
+    <!-- 设置分割线颜色 -->
+    <attr name="tl_divider_color" format="color"/>
+    <!-- 设置分割线宽度 -->
+    <attr name="tl_divider_width" format="dimension"/>
+    <!-- 设置分割线的paddingTop和paddingBottom -->
+    <attr name="tl_divider_padding" format="dimension"/>
+
+    <!-- tab -->
+    <!-- 设置tab的paddingLeft和paddingRight -->
+    <attr name="tl_tab_padding" format="dimension"/>
+    <!-- 设置tab大小等分 -->
+    <attr name="tl_tab_space_equal" format="boolean"/>
+    <!-- 设置tab固定大小 -->
+    <attr name="tl_tab_width" format="dimension"/>
+
+    <!-- title -->
+    <!-- 设置字体大小 -->
+    <attr name="tl_textsize" format="dimension"/>
+    <!-- 设置字体选中颜色 -->
+    <attr name="tl_textSelectColor" format="color"/>
+    <!-- 设置字体未选中颜色 -->
+    <attr name="tl_textUnselectColor" format="color"/>
+    <!-- 设置字体加粗 -->
+    <attr name="tl_textBold" format="enum">
+        <enum name="NONE" value="0"/>
+        <enum name="SELECT" value="1"/>
+        <enum name="BOTH" value="2"/>
+    </attr>
+    <!-- 设置字体全大写 -->
+    <attr name="tl_textAllCaps" format="boolean"/>
+
+    <declare-styleable name="SlidingTabLayout">
+        <!-- indicator -->
+        <attr name="tl_indicator_color"/>
+        <attr name="tl_indicator_height"/>
+        <attr name="tl_indicator_width"/>
+        <attr name="tl_indicator_margin_left"/>
+        <attr name="tl_indicator_margin_top"/>
+        <attr name="tl_indicator_margin_right"/>
+        <attr name="tl_indicator_margin_bottom"/>
+        <attr name="tl_indicator_corner_radius"/>
+        <attr name="tl_indicator_gravity"/>
+        <attr name="tl_indicator_style"/>
+        <attr name="tl_indicator_width_equal_title"/>
+
+        <!-- underline -->
+        <attr name="tl_underline_color"/>
+        <attr name="tl_underline_height"/>
+        <attr name="tl_underline_gravity"/>
+
+        <!-- divider -->
+        <attr name="tl_divider_color"/>
+        <attr name="tl_divider_width"/>
+        <attr name="tl_divider_padding"/>
+
+        <!-- tab -->
+        <attr name="tl_tab_padding"/>
+        <attr name="tl_tab_space_equal"/>
+        <attr name="tl_tab_width"/>
+
+        <!-- title -->
+        <attr name="tl_textsize"/>
+        <attr name="tl_textSelectColor"/>
+        <attr name="tl_textUnselectColor"/>
+        <attr name="tl_textBold"/>
+        <attr name="tl_textAllCaps"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="CommonTabLayout">
+        <!-- indicator -->
+        <attr name="tl_indicator_color"/>
+        <attr name="tl_indicator_height"/>
+        <attr name="tl_indicator_width"/>
+        <attr name="tl_indicator_margin_left"/>
+        <attr name="tl_indicator_margin_top"/>
+        <attr name="tl_indicator_margin_right"/>
+        <attr name="tl_indicator_margin_bottom"/>
+        <attr name="tl_indicator_corner_radius"/>
+        <attr name="tl_indicator_gravity"/>
+        <attr name="tl_indicator_style"/>
+        <attr name="tl_indicator_anim_enable"/>
+        <attr name="tl_indicator_anim_duration"/>
+        <attr name="tl_indicator_bounce_enable"/>
+
+        <!-- underline -->
+        <attr name="tl_underline_color"/>
+        <attr name="tl_underline_height"/>
+        <attr name="tl_underline_gravity"/>
+
+        <!-- divider -->
+        <attr name="tl_divider_color"/>
+        <attr name="tl_divider_width"/>
+        <attr name="tl_divider_padding"/>
+
+        <!-- tab -->
+        <attr name="tl_tab_padding"/>
+        <attr name="tl_tab_space_equal"/>
+        <attr name="tl_tab_width"/>
+
+        <!-- title -->
+        <attr name="tl_textsize"/>
+        <attr name="tl_textSelectColor"/>
+        <attr name="tl_textUnselectColor"/>
+        <attr name="tl_textBold"/>
+        <attr name="tl_textAllCaps"/>
+
+        <!-- icon -->
+        <!-- 设置icon宽度 -->
+        <attr name="tl_iconWidth" format="dimension"/>
+        <!-- 设置icon高度 -->
+        <attr name="tl_iconHeight" format="dimension"/>
+        <!-- 设置icon是否可见 -->
+        <attr name="tl_iconVisible" format="boolean"/>
+        <!-- 设置icon显示位置,对应Gravity中常量值 -->
+        <attr name="tl_iconGravity" format="enum">
+            <enum name="LEFT" value="3"/>
+            <enum name="TOP" value="48"/>
+            <enum name="RIGHT" value="5"/>
+            <enum name="BOTTOM" value="80"/>
+        </attr>
+        <!-- 设置icon与文字间距 -->
+        <attr name="tl_iconMargin" format="dimension"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="SegmentTabLayout">
+        <!-- indicator -->
+        <attr name="tl_indicator_color"/>
+        <attr name="tl_indicator_height"/>
+        <attr name="tl_indicator_margin_left"/>
+        <attr name="tl_indicator_margin_top"/>
+        <attr name="tl_indicator_margin_right"/>
+        <attr name="tl_indicator_margin_bottom"/>
+        <attr name="tl_indicator_corner_radius"/>
+        <attr name="tl_indicator_anim_enable"/>
+        <attr name="tl_indicator_anim_duration"/>
+        <attr name="tl_indicator_bounce_enable"/>
+
+        <!-- divider -->
+        <attr name="tl_divider_color"/>
+        <attr name="tl_divider_width"/>
+        <attr name="tl_divider_padding"/>
+
+        <!-- tab -->
+        <attr name="tl_tab_padding"/>
+        <attr name="tl_tab_space_equal"/>
+        <attr name="tl_tab_width"/>
+
+        <!-- title -->
+        <attr name="tl_textsize"/>
+        <attr name="tl_textSelectColor"/>
+        <attr name="tl_textUnselectColor"/>
+        <attr name="tl_textBold"/>
+        <attr name="tl_textAllCaps"/>
+
+        <attr name="tl_bar_color" format="color"/>
+        <attr name="tl_bar_stroke_color" format="color"/>
+        <attr name="tl_bar_stroke_width" format="dimension"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="MsgView">
+        <!-- 圆角矩形背景色 -->
+        <attr name="mv_backgroundColor" format="color"/>
+        <!-- 圆角弧度,单位dp-->
+        <attr name="mv_cornerRadius" format="dimension"/>
+        <!-- 圆角弧度,单位dp-->
+        <attr name="mv_strokeWidth" format="dimension"/>
+        <!-- 圆角边框颜色-->
+        <attr name="mv_strokeColor" format="color"/>
+        <!-- 圆角弧度是高度一半-->
+        <attr name="mv_isRadiusHalfHeight" format="boolean"/>
+        <!-- 圆角矩形宽高相等,取较宽高中大值-->
+        <attr name="mv_isWidthHeightEqual" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="PasswordInputView">
+        <attr name="pwv_maxLength" format="integer" />
+
+        <attr name="pwv_borderColor" format="color" />
+        <attr name="pwv_pwdColor" format="color" />
+        <attr name="pwv_haveInputBorderColor" format="color" />
+
+        <attr name="pwv_strokeWidth" format="dimension" />
+        <attr name="pwv_radius" format="dimension" />
+        <attr name="pwv_spacing" format="dimension" />
+        <attr name="pwv_asterisk" format="string" />
+
+        <attr name="pwv_borderStyle" format="enum">
+            <enum name="box" value="0" />
+            <enum name="line" value="1" />
+        </attr>
+        <attr name="pwv_pwdStyle" format="enum">
+            <enum name="circle" value="0" />
+            <enum name="asterisk" value="1" />
+            <enum name="plaintext" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="NineGridImageView">
+        <attr format="dimension" name="singleImgSize"/>
+        <attr format="dimension" name="imgGap"/>
+        <attr format="integer" name="maxSize"/>
+        <attr format="enum" name="showStyle">
+            <enum name="grid" value="0"/>
+            <enum name="fill" value="1"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="CircleImageView">
+        <attr name="is_circle" format="boolean" />
+        <attr name="is_cover_src" format="boolean" />
+        <attr name="corner_radius" format="dimension" />
+        <attr name="corner_top_left_radius" format="dimension" />
+        <attr name="corner_top_right_radius" format="dimension" />
+        <attr name="corner_bottom_left_radius" format="dimension" />
+        <attr name="corner_bottom_right_radius" format="dimension" />
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="inner_border_width" format="dimension" />
+        <attr name="inner_border_color" format="color" />
+        <attr name="mask_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="RealtimeBlurView">
+        <attr name="realtimeBlurRadius" format="dimension"/>
+        <attr name="realtimeDownsampleFactor" format="float"/>
+        <attr name="realtimeOverlayColor" format="color"/>
+    </declare-styleable>
+</resources>

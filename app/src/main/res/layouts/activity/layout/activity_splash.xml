@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/splash_bg">
+    <ImageView
+        android:id="@+id/iv_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/ic_splash"
+        android:scaleType="centerInside"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/init"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/c2"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textSize="25sp"
+        android:text="初始化中,请稍候..."
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/DIMEN_150PX"
+        android:textColor="@color/c2"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:textSize="@dimen/DIMEN_20PX"
+        tools:text="@string/app_name"
+        android:visibility="visible"/>
+    <LinearLayout
+        android:id="@+id/show_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/transparent80"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/DIMEN_50PX"
+            android:layout_marginRight="@dimen/DIMEN_50PX"
+            android:gravity="center"
+            android:background="@drawable/white_radius_bg"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/DIMEN_25PX"
+                android:layout_marginTop="@dimen/DIMEN_50PX"
+                android:text="用户协议和隐私协议"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/DIMEN_30PX"
+                android:lineSpacingExtra="@dimen/DIMEN_10PX"
+                android:textSize="@dimen/DIMEN_20PX"
+                android:textColor="@color/c5"
+                android:text="      用户服务协议和隐私协议请你务必申慎阅读、充分理解《隐私协议》和《用户服务协议》各条款，包括但不限于:为了向你提供信息、分享等服务，我们需要收集你的设备信息、操作日志等个人信息。你可阅读《服务协议》和《隐私政策》了解详细信息。如你同意，请点击问意开始接受我们的服务。"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/privacy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/DIMEN_10PX"
+                    android:text="《隐私协议》"
+                    android:textColor="#5391FC"
+                    android:textSize="@dimen/DIMEN_20PX"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="与"
+                    android:textColor="#ffaaaaaa"
+                    android:textSize="@dimen/DIMEN_18PX"
+                    />
+
+                <TextView
+                    android:id="@+id/greement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="《服务协议》"
+                    android:textColor="#5391FC"
+                    android:textSize="@dimen/DIMEN_20PX"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DIMEN_80PX"
+                android:layout_marginTop="@dimen/DIMEN_40PX"
+                android:layout_marginBottom="@dimen/DIMEN_20PX"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/cancel_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="暂不使用"
+                    android:textSize="@dimen/DIMEN_25PX"
+                    android:textColor="@color/c5"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/agree_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="同意"
+                    android:textSize="@dimen/DIMEN_25PX"
+                    android:textColor="@color/c41"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/comein"
+        android:layout_width="@dimen/DIMEN_100PX"
+        android:layout_height="@dimen/DIMEN_40PX"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/DIMEN_50PX"
+        android:layout_marginRight="@dimen/DIMEN_20PX"
+        android:layout_alignParentRight="true"
+        tools:text="1s"
+        android:textSize="@dimen/DIMEN_25PX"
+        android:gravity="center"
+        android:textColor="@color/c1"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:background="@drawable/guide_close_bg"/>
+
+</RelativeLayout>

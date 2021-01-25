@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/web_layout"
+    android:background="@color/c7">
+
+    <LinearLayout
+        android:id="@+id/data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DIMEN_80PX">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/DIMEN_60PX"
+                    android:background="@drawable/search_layout_bg"
+                    android:layout_marginLeft="@dimen/DIMEN_30PX"
+                    android:layout_marginRight="@dimen/DIMEN_30PX"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/DIMEN_10PX"
+                    android:layout_toLeftOf="@+id/search_go_btn"
+                    android:gravity="center|left">
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scrollbars="horizontal">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center|left"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/input"
+                                style="@style/order_editText_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/DIMEN_10PX"
+                                android:textSize="@dimen/DIMEN_20PX"
+                                android:textCursorDrawable="@null"
+                                android:text="https://192.168.1.7:9092/bg/home"
+                                android:hint="输入地址"
+                                android:maxLength="1000"
+                                android:maxLines="1"/>
+
+                        </LinearLayout>
+                    </androidx.core.widget.NestedScrollView>
+
+                    <LinearLayout
+                        android:id="@+id/clear_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="@dimen/DIMEN_10PX"
+                        android:paddingRight="@dimen/DIMEN_10PX"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="@dimen/DIMEN_25PX"
+                            android:layout_height="@dimen/DIMEN_25PX"
+                            android:src="@mipmap/ic_clear_default_normal"
+                            android:visibility="visible"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/search_go_btn"
+                    android:layout_width="@dimen/DIMEN_60PX"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/DIMEN_20PX"
+                    android:text="前往"
+                    android:textColor="#ff5391fc"
+                    android:textSize="@dimen/DIMEN_22PX"/>
+            </RelativeLayout>
+
+
+            <View
+                android:id="@+id/toolbar_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DIMEN_1PX"
+                android:layout_alignParentBottom="true"
+                android:background="@color/c2"
+                android:visibility="visible"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ProgressBar
+                android:id="@+id/progressBar_web"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:max="100"/>
+
+            <WebView
+                android:id="@+id/web_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/progressBar_web"
+                android:focusable="false">
+            </WebView>
+
+            <LinearLayout
+                android:id="@+id/network_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:id="@+id/no_net_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/reload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/no_internet_title"
+                    android:textSize="15dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/no_internet_content"
+                    android:textSize="13.3dp"/>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/read_btn"
+        android:layout_width="@dimen/DIMEN_200PX"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/DIMEN_100PX"
+        android:text="读取"
+        android:layout_gravity="center|bottom"
+        android:visibility="gone"/>
+</FrameLayout>

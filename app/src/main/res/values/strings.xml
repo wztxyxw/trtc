@@ -1,0 +1,5 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">退役军人服务终端</string>
+
+    <string name="splash_time" translatable="false"><xliff:g id="words">%s</xliff:g>s</string>
+</resources>
